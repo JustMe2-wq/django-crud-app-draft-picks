@@ -12,6 +12,7 @@
         <div class="players-grid">
             {% for player in player_list %}
             <div class="player-card">
+
                 <div class="player-card-header">
                     <h3 class="player-name">{{ player.name }}</h3>
                     <span class="player-position">{{ player.position }}</span>
@@ -19,9 +20,11 @@
                 
                 <div class="player-card-body">
                     <div class="player-info">
+
                         <div class="player-age">
                             <strong>Age:</strong> {{ player.age }}
                         </div>
+
                         <div class="player-draft">
                             <strong>Drafted:</strong>
                             {% if player.draft_set.all %}
@@ -32,6 +35,7 @@
                                 By no team
                             {% endif %}
                         </div>
+
                     </div>
                 </div>
 
@@ -40,21 +44,24 @@
                     <a href="{% url 'player_update' player.id %}" class="btn btn-secondary">Edit</a>
                     <a href="{% url 'player_delete' player.id %}" class="btn btn-danger">Delete</a>
                 </div>
+
             </div>
             {% endfor %}
         </div>
+
     {% else %}
         <div class="no-players">
             <h3>No Players Yet</h3>
         </div>
     {% endif %}
     
-    <div class="page-actions">
+    <div class="player-actions">
         <a href="{% url 'player_create' %}" class="btn btn-success btn-large">
             <span class="btn-icon">+</span>
             Add New Player
         </a>
     </div>
+
 </div>
 
 {% endblock %}

@@ -4,8 +4,9 @@
 {% block content %}
 
 <section class="team-container">
-    <div class="team_details">
+    <div class="team-header">
         <h1>{{ team.name }}</h1>
+        <div class="team-actions">
             <a href="{% url 'team_update' team.id %}" class="btn warn">Edit</a>
             <a href="{% url 'team_delete' team.id %}" class="btn danger">Delete</a>
         </div>
@@ -22,20 +23,18 @@
         </form>
         <h3>Current Draft Picks</h3>
         {% if team.draft_set.all.count %}
-        <table>
-            <thead>
+        <table class="draft-table">
+            <thead class="draft-table-header">
                 <tr>
-                    <th>Round</th>
-                    <th>Player</th>
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="draft-table-body">
                 {% for draft_pick in team.draft_set.all %}
-                <tr>
-                    <td>In The {{draft_pick.get_pick_display}},</td>
-                    <td>{{team.name}} selected {{draft_pick.player.name}}</td>
-                    <td>
+                <tr class="draft-table-row">
+                    <td>In The {{draft_pick.get_pick_display}}, 
+                        {{team.name}} selected {{draft_pick.player.name}}</td>
+                    <td class="draft-action">
                         <form action="{% url 'draft_delete' draft_pick.id %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="btn danger"> Remove Player {{draft_pick.player.name}}</button>

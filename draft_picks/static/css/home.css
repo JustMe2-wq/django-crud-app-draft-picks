@@ -1,0 +1,62 @@
+.draft-container {
+    padding: 2rem;
+    background-color: #ff00b3;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.draft-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.draft-title:hover {
+    text-decoration: underline;
+}
+
+.login-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-submit {
+    background-color: #ffffff;
+    color: #ff00b3;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .draft-container {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .draft-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 0.5rem;
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+    }
+
+    nav,
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+}

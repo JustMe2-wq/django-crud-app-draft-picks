@@ -1,15 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/home.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
 {% endblock %} {% block content %}
 
   <div class="draft-container">
     <h1 class="draft-title">NBG Draft</h1>
   </div>
 {% if not user.is_authenticated %}
-<section>
+<section class="login-section">
   <form action="{% url 'home' %}" method="post" class="login">
     <h1>Login</h1>
     {% csrf_token %} {{ form.as_p }}

@@ -4,6 +4,7 @@
 {% block content %}
 
 <div class="form-container">
+
     <div class="form-header">
         {% if object %}
             <h1 class="form-title">Edit {{ object.name }}</h1>
@@ -11,15 +12,17 @@
             <h1 class="form-title">Add a Team</h1>
         {% endif %}
     </div>
+
     <div class="form-card">
           <form action="" method="post" class="form-container" autocomplete="off">
                 {% csrf_token %}
-            <table>
+            <table class="form-table">
               {{ form.as_table }}
             </table>
               <button type="submit" class="btn submit">Submit!</button>
           </form>
     </div>
+
 </div>
 
 {% endblock %}

@@ -1,0 +1,171 @@
+.players-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.player-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+}
+
+.players-card-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.player-card h2 {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+}
+
+.player-name {
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.player-position {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.player-age {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.player-draft {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.player-card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+
+.player-card-actions .btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.no-players {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.no-players h3 {
+    text-align: center;
+    color: #999;
+}
+
+
+.player-actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.player-actions .btn {
+    text-align: center;
+}
+
+
+.add-player-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-player-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.add-player-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.add-player-floating:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+
+.button-container {
+    text-align: center;
+    margin: 30px 0;
+}

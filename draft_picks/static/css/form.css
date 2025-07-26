@@ -1,0 +1,67 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-header {
+    text-align: center;
+}
+
+.form-card {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 8px;
+    font-weight: bold;
+    color: var(--primary-text);
+}
+
+td {
+  max-width: 60%;
+}
+
+td > * {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+  font-size: var(--font-m);
+}
+
+td > textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.btn {
+  align-self: flex-end;
+  margin-right: 40px;
+}
+
+.btn-submit,
+input[type="submit"],
+button[type="submit"],
+.submit {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+}
+
+
+.btn.submit,
+.btn[type="submit"] {
+    align-self: center;
+    margin: 15px auto;
+    margin-right: auto;
+}

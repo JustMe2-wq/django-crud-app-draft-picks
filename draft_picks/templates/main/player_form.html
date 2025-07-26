@@ -4,22 +4,24 @@
 {% block content %}
 
   <div class="form-container">
+
     <div class="form-header">
       {% if object %}
-        <h1 class="form-title">Edit {{ object.name }}</h1>
+        <h1>Edit {{ object.name }}</h1>
       {% else %}
-        <h1 class="form-title">Add Player</h1>
+        <h1>Add Player</h1>
       {% endif %}
     </div>
     
     <div class="form-card">
       <form action="" method="post" class="form-container" autocomplete="off">
-                {% csrf_token %}
-            <table>
-              {{ form.as_table }}
-            </table>
+        {% csrf_token %}
+        <table>
+          {{ form.as_table }}
+        </table>
               <button type="submit" class="btn submit">Submit!</button>
-            </form>
+      </form>
     </div>
+
   </div>
 {% endblock %}

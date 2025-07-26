@@ -69,7 +69,7 @@ def add_draft(request, team_id):
 
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
-    fields = ['position']
+    fields = ['name', 'position', 'age']
     template_name = 'main/player_form.html'
     
     def form_valid(self, form):
@@ -92,7 +92,7 @@ class PlayerDetail(LoginRequiredMixin, DetailView):
 
 class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
-    fields = ['name', 'position', 'age']
+    fields = ['position']
     template_name = 'main/player_form.html'
     
     def get_queryset(self):

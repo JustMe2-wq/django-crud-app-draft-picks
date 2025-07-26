@@ -1,0 +1,166 @@
+.team-container {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.team-header h1 {
+    text-align: center;
+    margin: 0;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.team-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.draft-player-container {
+    margin-top: 2rem;
+}
+
+.draft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.draft-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.draft-table-header {
+    background-color: #f2f2f2;
+}
+
+.draft-table-header th {
+    padding: 12px 8px;
+    text-align: left;
+}
+
+.draft-table-header th, .draft-table-body td {
+    border: 1px solid #ddd;
+}
+
+
+.draft-table-body td {
+    padding: 8px;
+}
+.draft-table-body tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.draft-table-body tr:hover {
+    background-color: #f1f1f1;
+}
+
+.draft-table-body td > * {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    font-size: var(--font-m);
+}
+
+.draft-table-body td > textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.draft-table-body .btn {
+    align-self: flex-end;
+    margin-right: 40px;
+}
+
+
+.btn-submit,
+input[type="submit"],
+button[type="submit"] {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+}
+
+
+form .btn-submit,
+form input[type="submit"],
+form button[type="submit"] {
+    display: block;
+    margin: 15px auto;
+}
+
+
+.draft form .btn,
+.draft-player-container .btn {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+.draft-table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.draft-table-row > div {
+    flex: 1;
+    padding: 8px;
+}
+
+.draft-table-row > div:nth-child(2) {
+    text-align: center;
+}
+
+.subsection-content {
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .draft-container {
+        padding: 2rem;
+    }
+
+    .draft-title {
+        font-size: 2rem;
+    }
+
+    .btn-submit {
+        width: auto;
+        padding: 0.5rem 1rem;
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+    }
+
+    nav,
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .logo img {
+        max-height: 60px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}

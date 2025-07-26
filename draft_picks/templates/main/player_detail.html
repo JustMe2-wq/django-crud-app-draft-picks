@@ -6,7 +6,6 @@
 <div class="player-detail-container">
     <div class="player-header">
         <h1 class="player-name">{{ object.name }}</h1>
-        <p class="player-subtitle">{{ object.position }} • Age {{ object.age }}</p>
     </div>
 
     <div class="player-info">
@@ -22,13 +21,13 @@
                     <span class="value">{{ object.age }}</span>
                 </div>
                 <div class="item">
-                    <span class="label">Teams</span>
+                    <span class="label">Team</span>
                     <span class="value">{{ object.team_set.count }}</span>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="draft-history">
         <h3>Draft History</h3>
         {% if object.draft_set.all %}
