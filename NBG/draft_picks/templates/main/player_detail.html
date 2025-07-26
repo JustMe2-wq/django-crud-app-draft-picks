@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/players/player-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="player-detail-container">
+    <div class="player-header">
+        <h1 class="player-name">{{ object.name }}</h1>
+        <p class="player-subtitle">{{ object.position }} • Age {{ object.age }}</p>
+    </div>
+
+    <div class="player-info">
+        <div class="player-info-card">
+            <h3>Player Information</h3>
+            <div class="player-info-list">
+                <div class="item">
+                    <span class="label">Position</span>
+                    <span class="value">{{ object.position }}</span>
+                </div>
+                <div class="item">
+                    <span class="label">Age</span>
+                    <span class="value">{{ object.age }}</span>
+                </div>
+                <div class="item">
+                    <span class="label">Teams</span>
+                    <span class="value">{{ object.team_set.count }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="draft-history">
+        <h3>Draft History</h3>
+        {% if object.draft_set.all %}
+            <div class="draft-list">
+                {% for draft in object.draft_set.all %}
+                    <div class="draft-item">
+                        <span class="draft-team">Drafted by {{ draft.team.name }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="not-drafted">Player not drafted.</p>
+        {% endif %}
+    </div>
+    
+    <div class="player-actions">
+        <a href="{% url 'player_update' object.id %}" class="btn btn-warning">Edit Player</a>
+        <a href="{% url 'player_delete' object.id %}" class="btn btn-danger">Delete Player</a>
+        <a href="{% url 'player_index' %}" class="btn btn-secondary">Back to Players</a>
+    </div>
+</div>
+
+{% endblock %}

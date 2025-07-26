@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/teams/team-detail.css' %}" />
+{% endblock %}
+{% block content %}
+
+<section class="team-container">
+    <div class="team_details">
+        <h1>{{ team.name }}</h1>
+            <a href="{% url 'team_update' team.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'team_delete' team.id %}" class="btn danger">Delete</a>
+        </div>
+    </div>
+</section>
+
+<div class="draft-player-container">
+    <section class="draft">
+        <h3>Add a Draft Pick</h3>
+        <form action="{% url 'add_draft' team.id %}" method="post" class="subsection-content" autocomplete="off">
+            {% csrf_token %}
+            {{ draft_form.as_p }}
+            <button type="submit" class="btn submit">Add Draft Pick</button>
+        </form>
+        <h3>Current Draft Picks</h3>
+        {% if team.draft_set.all.count %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Round</th>
+                    <th>Player</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for draft_pick in team.draft_set.all %}
+                <tr>
+                    <td>In The {{draft_pick.get_pick_display}},</td>
+                    <td>{{team.name}} selected {{draft_pick.player.name}}</td>
+                    <td>
+                        <form action="{% url 'draft_delete' draft_pick.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn danger"> Remove Player {{draft_pick.player.name}}</button>
+                            {% with draft_pick.player.id as player_id %}
+                            {% endwith %}</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="subsection-content">
+            <p> {{team.name}} has yet to draft any players.</p>
+        </div>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}
