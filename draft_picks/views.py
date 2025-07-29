@@ -13,9 +13,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class Home(LoginView):
     template_name = 'home.html'
 
-def home(request):
-    return render(request, 'home.html')
-
 def about(request):
     return render(request, 'about.html')
 
