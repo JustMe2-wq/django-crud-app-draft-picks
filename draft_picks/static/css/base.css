@@ -10,17 +10,17 @@ html {
     --font-family: 'times new roman', serif;
     --font-size: 16px;
     --line-height: 1.5;
-    --danger: #000000;
+    --danger: #2d2a2a;
     --danger-text: #ffffff;
     --secondary-bg: #ffffff;
     --secondary-text: #000000;
-    --submit-bg: #000000;
+    --submit-bg: #ff00b3;
     --submit-text: #ffffff;
     --nav-bg: #ff00b3;
     --nav-text: #ffffff;
     --nav-hover-bg: #ff00b3;
     --nav-hover-text: #f7d9d9;
-    --warn: #000000;
+    --warn: #ff00b3;
     --borders: #000000;
     --text-color: #000000;
 }
@@ -124,7 +124,6 @@ nav ul {
 .team-delete-container .form .btn {
     margin: 0.5rem 0;
     font-size: 1rem;
-    color: var(--text-color);
 }
 
 .player-delete-container {
@@ -146,7 +145,6 @@ nav ul {
 .player-delete-container .form .btn {
     margin: 0.5rem 0;
     font-size: 1rem;
-    color: var(--text-color);
 }
 
 .page-content {
@@ -205,6 +203,21 @@ form .submit {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.btn.secondary {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    border: 1px solid var(--borders);
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn.secondary:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+}
+
 .warn {
     background-color: var(--warn);
     color: var(--danger-text);
@@ -219,6 +232,19 @@ form .submit {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn.danger {
+    background-color: var(--danger);
+    color: var(--danger-text);
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    border: none;
+}
+
+.btn.danger:hover {
+    background-color: var(--warn);
+    color: var(--danger-text);
 }
 
 .draft-container {

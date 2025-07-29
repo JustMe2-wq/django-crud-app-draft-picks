@@ -22,7 +22,7 @@
             <button type="submit" class="btn submit">Add Draft Pick</button>
         </form>
         <h3>Current Draft Picks</h3>
-        {% if team.draft_set.all.count %}
+        {% if user_drafts.count %}
         <table class="draft-table">
             <thead class="draft-table-header">
                 <tr>
@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody class="draft-table-body">
-                {% for draft_pick in team.draft_set.all %}
+                {% for draft_pick in user_drafts %}
                 <tr class="draft-table-row">
                     <td>In The {{draft_pick.get_pick_display}}, 
                         {{team.name}} selected {{draft_pick.player.name}}</td>

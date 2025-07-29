@@ -31,11 +31,14 @@ def team_detail(request, team_id):
     except Team.DoesNotExist:
         return redirect('team_index')
     players_team_doesnt_have = Player.objects.filter(user=request.user).exclude(id__in=team.players.all().values_list('id'))
+    user_drafts = Draft.objects.filter(user=request.user, team=team)
     draft_form = DraftForm()
+    draft_form.fields['player'].queryset = Player.objects.filter(user=request.user)
     return render(request, 'teams/details.html', {
         'team': team,
         'draft_form': draft_form,
-        'players': players_team_doesnt_have
+        'players': players_team_doesnt_have,
+        'user_drafts': user_drafts
     })
 
 
@@ -58,11 +61,13 @@ class TeamDelete(LoginRequiredMixin, DeleteView):
     success_url = '/teams/'
     template_name = 'main/team_delete.html'
 
+@login_required
 def add_draft(request, team_id):
     form = DraftForm(request.POST)
     if form.is_valid():
         new_draft = form.save(commit=False)
         new_draft.team_id = team_id
+        new_draft.user = request.user
         new_draft.save()
         
     return redirect('team_detail', team_id=team_id)
@@ -109,6 +114,9 @@ class PlayerDelete(LoginRequiredMixin, DeleteView):
 class DraftDelete(LoginRequiredMixin, DeleteView):
     model = Draft
     template_name = 'main/draft_delete.html'
+
+    def get_queryset(self):
+        return Draft.objects.filter(user=self.request.user)
 
     def get_success_url(self):
         return reverse('team_detail', kwargs={'team_id': self.object.team.id})
